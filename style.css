@@ -1,0 +1,322 @@
+:root {
+    --bg-main: #F8F6F0;          /* Warm soft cream background */
+    --bg-card: #FFFFFF;          /* Clean white card surface */
+    --text-primary: #1D3557;     /* Deep navy for strong readability */
+    --text-muted: #6C757D;       /* Neutral gray for secondary info */
+    --accent-red: #E63946;       /* Energetic fast-food red for CTAs */
+    --accent-red-hover: #C92A37; /* Darker red hover state */
+    --border-subtle: #E2E8F0;    /* Light structural borders */
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    background: var(--accent-red);
+    border: none;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--accent-red-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #3a6b85;
+}
+
+.btn-primary {
+    background: var(--accent-red);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    background: var(--accent-red);
+    color: #fff;
+}
+
+nav ul li.cart a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav img,
+nav ul li.cart img {
+    width: 28px;
+    height: 28px;
+}
+
+nav ul li.cart {
+    position: relative;
+}
+
+/* Header & Hero Section */
+.header {
+    text-align: center;
+    margin-top: 20px;
+    padding: 40px 20px 20px 20px;
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.header h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+}
+
+/* Menu Container */
+.menu {
+    padding: 20px 30px 40px 30px;
+    background-color: transparent;
+}
+
+.menu h2 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* About section styling */
+.about-section {
+    background: linear-gradient(180deg, rgba(230,57,70,0.03), transparent 60%);
+    border-radius: 12px;
+    padding: 22px;
+    margin: 20px 0;
+}
+.about-section .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text-primary);
+}
+.about-section h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+.about-section p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.category-form {
+    margin-bottom: 20px;
+}
+
+.category-form select {
+    padding: 10px 14px;
+    border: 1px solid #CBD5E1;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-weight: 600;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Cards Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* KEY ALIGNMENT FIX APPLIED HERE */
+.menu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+    box-sizing: border-box;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card-top {
+    margin-bottom: 24px;
+}
+
+.menu-card h3 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.menu-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 12px;
+    min-height: 72px;
+}
+
+.menu-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 18px 0 0;
+    font-weight: 600;
+}
+
+.menu-meta span {
+    background: rgba(230, 57, 70, 0.08);
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.menu-card-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.menu-price {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.menu-actions a,
+.menu-actions .btn {
+    min-width: 130px;
+}
+
+.menu-actions a,
+.menu-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.menu-actions .btn-secondary {
+    background: #3a6b85;
+}
+
+.menu-actions .btn-primary {
+    background: var(--accent-red);
+}
+
+.menu-actions a:hover,
+.menu-actions .btn:hover {
+    background: var(--accent-red-hover);
+}
+
+@media screen and (max-width: 680px) {
+    .menu-card {
+        min-height: auto;
+    }
+    .menu-card-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+.shape {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+}
